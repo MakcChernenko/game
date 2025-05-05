@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import hero from '../public/img/gotick.jpg';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,7 +15,7 @@ function App() {
           veritatis eum dolorum sed nemo quibusdam, doloribus illo eos beatae
           modi!
         </div>
-        <div className="section img"><img src="/public/img/gotick.jpg" alt="" /></div>
+        <div className="section img"><img src={hero} alt="" /></div>
         <div className="section selector">
           <ul>
             <li><button className="button" >choice1</button></li>
