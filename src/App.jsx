@@ -14,7 +14,7 @@ function App() {
           veritatis eum dolorum sed nemo quibusdam, doloribus illo eos beatae
           modi!
         </div>
-        <div className="section img"><img src="../public/img/gotick.jpg" alt="" /></div>
+        <div className="section img"><img src="/public/img/gotick.jpg" alt="" /></div>
         <div className="section selector">
           <ul>
             <li><button className="button" >choice1</button></li>

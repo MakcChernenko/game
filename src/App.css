@@ -6,12 +6,12 @@
   word-wrap: break-word;
 }
 img{
-  width: 100%; /* або конкретна ширина, залежно від потреб */
-  height: 100%; /* або конкретна висота, якщо потрібно */
+  width: 100%; 
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* якщо хочете, щоб картинка не виходила за межі */
+  overflow: hidden;
   object-fit: cover;
 }
 .container {
