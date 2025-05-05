@@ -1,9 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+img{
+  width: 100%; /* або конкретна ширина, залежно від потреб */
+  height: 100%; /* або конкретна висота, якщо потрібно */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* якщо хочете, щоб картинка не виходила за межі */
+  object-fit: cover;
+}
+.container {
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
 .main {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../public/img/cosmios.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+.section {
+  border: 5px solid white;
+  border-radius: 110px;
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.description {
+  width: 76%;
+  height: 43vh;
+  background-color: #112320;
+  padding: 30px;
+}
+
+.img {
+  width: 20%;
+  height: 43vh;
+  background-color: #333;
+}
+
+.selector {
+  width: 76%;
+  height: 43vh;
+  background-color: #112320;
+  padding: 30px;
+}
+
+.state {
+  width: 20%;
+  height: 43vh;
+  background-color: #000509;
+  padding: 30px;
+}
+.button{
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+.button:hover{
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description,
+  .img,
+  .selector,
+  .state {
+    width: 90%;
+    height: auto;
+    border-radius: 30px;
+  }
 }
