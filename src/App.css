@@ -52,6 +52,7 @@ img{
   width: 20%;
   height: 43vh;
   background-color: #333;
+  padding: 0;
 }
 
 .selector {
@@ -74,6 +75,7 @@ img{
 }
 .button:hover{
   cursor: pointer;
+  color:darkgreen;
 }
 @media (max-width: 1000px) {
   .main {
