@@ -15,7 +15,15 @@ const story = {
         { text: "Зайти у праві кущі", next: "rightside" },
         { text: "Зайти кущі напроти", next: "strengthSide", inventory: ["гриб", "трава"],},
         { text: "Зайнятися табором", next: "camp" },
-        { text: "Повернутись назад", next: "warning" }
+        { text: "Повернутись назад", next: "warning" },
+        {text: "Лягти відпочити", next: "rest", inventory: ["енергія"]},
+      ]
+    },
+    rest:{
+      text: "Ви відпочиваєте і набираєтеся сил",
+      img: "img/rest.jpg",
+      options: [
+        {text: "Я відпочив", next: "hero"}
       ]
     },
     camp:{
