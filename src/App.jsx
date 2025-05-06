@@ -1,32 +1,50 @@
 import { useState } from "react";
 import "./App.css";
-import hero from '../public/img/gotick.jpg';
+import story from "../src/data/promo/story"
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [scene, setScene] = useState("start");
+  const [inventory, setInventory] = useState([]);
+
+  const current = story[scene];
+
+  const handleChoice = (option) => {
+    setScene(option.next);
+  
+    if (option.inventory) {
+      setInventory((prevInventory) => [
+        ...prevInventory,
+        ...option.inventory
+      ]);
+    }
+  };
 
   return (
-    <>
-    <main className="container" >
+    <main className="container">
       <div className="main">
-        <div className="section description">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta amet
-          incidunt assumenda et labore alias aperiam dolores excepturi optio
-          veritatis eum dolorum sed nemo quibusdam, doloribus illo eos beatae
-          modi!
+        <div className="section description">{current.text}</div>
+        <div className="section img">
+          <img src={current.img} alt="scene" />
         </div>
-        <div className="section img"><img src={hero} alt="" /></div>
         <div className="section selector">
           <ul>
-            <li><button className="button" >choice1</button></li>
-            <li><button className="button">choice2</button></li>
-            <li><button className="button">choice3</button></li>
+            {current.options.map((opt, i) => (
+              <li key={i}>
+                <button className="button" onClick={() => handleChoice(opt)}>
+                  {opt.text}
+                </button>
+              </li>
+            ))}
+            {current.end && <li><strong>КІНЕЦЬ ГРИ</strong></li>}
+            {current.success && <li><strong>ТИ ВРЯТУВАВСЯ 🎉</strong></li>}
           </ul>
         </div>
-        <div className="section state">xp = 11</div>
+        <div className="section state">
+          <p>🎒 Інвентар:</p>
+          <ul>{inventory.map((item, i) => <li key={i}>{item}</li>)}</ul>
+        </div>
       </div>
-      </main>
-    </>
+    </main>
   );
 }
 
