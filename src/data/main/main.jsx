@@ -4,7 +4,7 @@ const games = {
     img: "",
     options: [
       { text: "Тупа демка", next: "demo" },
-      { text: "Класна гра від Андрія", next: "avantyurist" },
+      { text: "Дар Міанта", next: "avantyurist" },
     ],
   },
 };
