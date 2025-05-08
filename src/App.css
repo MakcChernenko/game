@@ -79,10 +79,11 @@ img {
   cursor: pointer;
   color: rgb(7, 235, 7);
 }
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .main {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   .description,
@@ -90,7 +91,36 @@ img {
   .selector,
   .state {
     width: 90%;
-    height: auto;
-    border-radius: 30px;
+    min-height: auto;
+  }
+
+  .description {
+    min-height: 25vh;
+  }
+
+  .selector {
+    min-height: 20vh;
+  }
+
+  .img,
+  .state {
+    min-height: 25vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .section {
+    border-width: 3px;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .button {
+    font-size: 18px;
   }
 }
