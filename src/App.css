@@ -92,7 +92,7 @@ img {
     border: 1px solid rgba(228, 224, 14, 0.863);
     font-size: 16px;
     border-radius: 20px;
-    padding: 0;
+    padding: 2px;
   }
 
   .button {
