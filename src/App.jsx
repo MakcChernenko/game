@@ -1,21 +1,45 @@
 import { useState } from "react";
 import "./App.css";
-import story from "../src/data/promo/story"
+import demo from "../src/data/promo/story";
+import avantyurist from "../src/data/avantyurist/avantyurist";
+import games from "../src/data/main/main";
+
+const allGames = {
+  demo,
+  avantyurist,
+};
 
 function App() {
+  const [activeGame, setActiveGame] = useState(null);
   const [scene, setScene] = useState("start");
   const [inventory, setInventory] = useState([]);
 
-  const current = story[scene];
+  let current;
+
+  if (!activeGame) {
+    current = games[scene];
+  } else {
+    const game = allGames[activeGame];
+    current = game[scene] || {
+      text: "Сцену не знайдено",
+      img: "",
+      options: [],
+    };
+  }
 
   const handleChoice = (option) => {
-    setScene(option.next);
-  
+    if (
+      !activeGame &&
+      (option.next === "demo" || option.next === "avantyurist")
+    ) {
+      setActiveGame(option.next);
+      setScene("start");
+    } else {
+      setScene(option.next);
+    }
+
     if (option.inventory) {
-      setInventory((prevInventory) => [
-        ...prevInventory,
-        ...option.inventory
-      ]);
+      setInventory((prev) => [...prev, ...option.inventory]);
     }
   };
 
@@ -24,25 +48,29 @@ function App() {
       <div className="main">
         <div className="section description">{current.text}</div>
         <div className="section img">
-          <img src={current.img} alt="scene" />
+          {current.img && <img src={current.img} alt="scene" />}
         </div>
         <div className="section selector">
           <ul>
-            {current.options.map((opt, i) => (
+            {current.options?.map((opt, i) => (
               <li key={i}>
                 <button className="button" onClick={() => handleChoice(opt)}>
                   {opt.text}
                 </button>
               </li>
             ))}
-            {current.end && <li><strong>КІНЕЦЬ ГРИ</strong></li>}
-            {current.success && <li><strong>ТИ ВРЯТУВАВСЯ 🎉</strong></li>}
           </ul>
         </div>
-        <div className="section state">
-          <p>🎒 Інвентар:</p>
-          <ul>{inventory.map((item, i) => <li key={i}>{item}</li>)}</ul>
-        </div>
+        {activeGame && (
+          <div className="section state">
+            <p>🎒 Інвентар:</p>
+            <ul>
+              {inventory.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </main>
   );
