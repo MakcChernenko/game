@@ -3,6 +3,7 @@ import "./App.css";
 import demo from "../src/data/promo/story";
 import avantyurist from "../src/data/avantyurist/avantyurist";
 import games from "../src/data/main/main";
+import AudioPlayer from "./components/AudioPlayer";
 
 const allGames = {
   demo,
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <main className="container">
+      <AudioPlayer musicUrl={current.music} isUnlocked={true} />
       <div className="main">
         <div className="section description">{current.text}</div>
         <div className="section img">
@@ -52,7 +54,7 @@ function App() {
         </div>
         <div className="section selector">
           <ul>
-            {current.options?.map((opt, i) => (
+            {current.options.map((opt, i) => (
               <li key={i}>
                 <button className="button" onClick={() => handleChoice(opt)}>
                   {opt.text}
