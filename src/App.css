@@ -31,7 +31,7 @@ img {
 .main {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
     url("../public/img/fonForest.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,7 +44,7 @@ img {
 }
 
 .section {
-  border: 5px solid rgba(228, 224, 14, 0.863);
+  border: 5px solid rgba(63, 63, 38, 0.863);
   border-radius: 50px;
   padding: 1rem;
   color: white;
@@ -86,7 +86,7 @@ img {
 }
 .button:hover {
   cursor: pointer;
-  color: rgb(7, 235, 7);
+  color: rgb(12, 104, 12);
 }
 
 @media (max-width: 600px) {
@@ -98,7 +98,7 @@ img {
   }
 
   .section {
-    border: 1px solid rgba(228, 224, 14, 0.863);
+    border: 1px solid rgba(97, 96, 68, 0.863);
     font-size: 16px;
     border-radius: 10px;
     padding: 3px;
