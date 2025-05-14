@@ -1,12 +1,80 @@
-# React + Vite
+# 🎮 Text Adventure Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Магічна текстова гра, де твої вибори формують історію.
 
-Currently, two official plugins are available:
+Цей проєкт — це реактивна текстова пригода з інтерактивним інтерфейсом, адаптивним дизайном та фоновою музикою, яка занурює гравця в атмосферу гри.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧙‍♂️ Особливості
 
-## Expanding the ESLint configuration
+- 🎭 Два доступні сценарії:
+  - 👉 **Дар Міанта** — магічна історія у фентезі-світі.
+  - 👉 **Demo** — короткий вступний приклад.
+- 🔊 Динамічна фонова музика для кожної сцени.
+- 🌆 Зміна фону в залежності від гри.
+- 📱 Адаптивний дизайн — грай з мобільного або десктопа.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖥️ Демо
+
+👉 В майбутньому планується розгортання на Vercel/Netlify.
+
+## 🚀 Як запустити
+
+### 1. Клонувати репозиторій:
+
+```bash
+git clone https://github.com/MakcChernenko/game.git
+cd game
+```
+
+### 2. Встановити залежності:
+
+```bash
+npm install
+```
+
+### 3. Запустити локальний сервер:
+
+```bash
+npm run dev
+```
+
+Гра буде доступна за адресою [http://localhost:5173](http://localhost:5173) (Vite).
+
+> ⚠️ Увага: переконайтеся, що всі музичні файли зберігаються в папці `/public/sounds`.
+
+## 🗂️ Структура проєкту
+
+```
+📁 public/
+ └── 🎵 sounds/        # Музичні треки
+📁 src/
+ ├── components/       # Компоненти гри
+ │   ├── Avantyurist/
+ │   ├── Demo/
+ │   └── AudioPlayer.jsx
+ ├── data/             # Текстові дані
+ ├── App.jsx           # Основний компонент
+ └── app.css           # Стилі
+```
+
+## 🛠️ Використано
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- CSS Flexbox + Media Queries
+
+## 📌 План розвитку
+
+- [ ] Додати збереження прогресу.
+- [ ] Реалізувати більше сценаріїв.
+- [ ] Додати локалізацію.
+- [ ] Розгортання гри онлайн.
+- [ ] Додати анімації та ефекти.
+
+## 👤 Автор
+
+- GitHub: [MakcChernenko](https://github.com/MakcChernenko)
+
+---
+
+📬 Зворотний зв'язок, баг-репорти або пропозиції — у Issues або Pull Requests.

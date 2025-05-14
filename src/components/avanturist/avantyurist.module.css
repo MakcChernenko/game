@@ -4,12 +4,14 @@
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 40px;
   flex-wrap: wrap;
+  padding: 80px;
 }
 
 .section {
-  padding: 10px;
+  border: 3px solid #154e1b;
+  box-shadow: inset 0 0 10px #154e1b, 0 0 10px #154e1b;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -18,26 +20,26 @@
 }
 
 .description {
-  width: calc(75% - 10px);
-  height: calc(50% - 10px);
+  width: calc(75% - 20px);
+  height: calc(50% - 20px);
   padding: 30px;
   background-color: #0f1b1a;
 }
 .img {
-  width: calc(25% - 10px);
-  height: calc(50% - 10px);
+  width: calc(25% - 20px);
+  height: calc(50% - 20px);
   padding: 0;
   overflow: hidden;
 }
 .selector {
-  width: calc(75% - 10px);
-  height: calc(50% - 10px);
+  width: calc(75% - 20px);
+  height: calc(50% - 20px);
   padding: 30px;
   background-color: #0f1b1a;
 }
 .state {
-  width: calc(25% - 10px);
-  height: calc(50% - 10px);
+  width: calc(25% - 20px);
+  height: calc(50% - 20px);
   background-color: #000509;
   padding: 30px;
 }
@@ -45,25 +47,26 @@
   background-color: transparent;
   border: none;
   color: #fff;
-  font-size: 25px;
+  font-size: 18px;
 }
 .button:hover {
-  cursor: progress;
+  cursor: pointer;
   color: rgb(12, 104, 12);
 }
 
 @media (max-width: 600px) {
   .container {
     max-width: 600px;
-    padding: 5px;
+    padding: 20px;
     flex-direction: column;
     gap: 0;
   }
   .section {
+    border: 1px solid #154e1b;
+    box-shadow: inset 0 0 10px #154e1b, 0 0 10px #154e1b;
     border: none;
     font-size: 16px;
     border-radius: 15px;
-    padding: 3px;
   }
   .button {
     font-size: 16px;
@@ -71,10 +74,12 @@
   .description {
     width: 100%;
     height: 25%;
+    padding: 16px;
   }
   .selector {
     width: 100%;
     height: 15%;
+    padding: 0;
   }
   .img {
     width: 100%;
@@ -83,5 +88,6 @@
   .state {
     width: 100%;
     height: 10%;
+    padding: 0;
   }
 }

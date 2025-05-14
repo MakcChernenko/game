@@ -30,7 +30,7 @@ const Avantyurist = ({setMusicUrl}) => {
           <ul>
             {current.options.map((opt, i) => (
               <li key={i}>
-                <button className="button" onClick={() => handleChoice(opt)}>{opt.text}</button>
+                <button className={css.button} onClick={() => handleChoice(opt)}>{opt.text}</button>
               </li>
             ))}
           </ul>

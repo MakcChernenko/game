@@ -12,7 +12,7 @@ ul {
 body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   color: rgb(160, 188, 194);
-  font-size: 20px;
+  font-size: 18px;
 }
 img {
   width: 100%;
@@ -42,7 +42,6 @@ img {
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  /* padding: 10px; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -54,20 +53,18 @@ img {
   background-size: cover;
   background-position: center;
 }
-.button {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  font-size: 20px;
+.h2{
+  font-size: 32px;
 }
-.button:hover,
-.button:focus {
+.h2:hover,
+.h2:focus {
   cursor: pointer;
+  box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
   color: rgb(12, 104, 12);
 }
 @media (max-width: 600px) {
   body {
-    font-size: 10px;
+    font-size: 16px;
   }
   .container {
     max-width: 600px;
@@ -75,7 +72,7 @@ img {
     flex-direction: column;
     gap: 0;
   }
-  .button {
-    font-size: 16px;
+  .h2 {
+    font-size: 28px;
   }
 }

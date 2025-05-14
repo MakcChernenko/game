@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import main from "./data/main/main";
 import Avantyurist from "./components/avanturist/avantyurist";
 import Demo from "./components/demo/Demo";
 import AudioPlayer from "./components/AudioPlayer"
@@ -35,9 +34,9 @@ const App = () => {
           <ul>
             {games.map((game, i) => (
               <li key={i}>
-                <button className="button" onClick={() => handleChoice(game)}>
+                <h2 className="h2" onClick={() => handleChoice(game)}>
                   {game}
-                </button>
+                </h2>
               </li>
             ))}
           </ul>
@@ -47,5 +46,5 @@ const App = () => {
       </div>
     </div>
   );
-;}
-export default App;
+}
+export default App
