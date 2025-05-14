@@ -24,17 +24,17 @@ img {
   transition: background-image 0.5s ease-in-out;
 }
 .bg-default {
-  background-image: url("img/cosmios.jpg");
+  background-image: url("/img/cosmios.jpg");
   background-size: cover;
   background-position: center;
 }
 .bg-avantyurist {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("img/fonForest.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("/img/fonForest.png");
   background-size: cover;
   background-position: center;
 }
 .bg-demo {
-  background-image: url("img/love.jpg");
+  background-image: url("/img/forest.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -50,8 +50,6 @@ img {
 }
 
 .main {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
-    url("img/fonForest.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
