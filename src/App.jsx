@@ -1,81 +1,51 @@
-import { useState } from "react";
-import "./App.css";
-import demo from "../src/data/promo/story";
-import avantyurist from "../src/data/avantyurist/avantyurist";
-import games from "../src/data/main/main";
-import AudioPlayer from "./components/AudioPlayer";
+import { useState, useEffect } from "react";
+import "./app.css";
+import main from "./data/main/main";
+import Avantyurist from "./components/avanturist/avantyurist";
+import Demo from "./components/demo/Demo";
+import AudioPlayer from "./components/AudioPlayer"
 
-const allGames = {
-  demo,
-  avantyurist,
-};
-
-function App() {
-  const [activeGame, setActiveGame] = useState(null);
-  const [scene, setScene] = useState("start");
-  const [inventory, setInventory] = useState([]);
-
-  let current;
-
-  if (!activeGame) {
-    current = games[scene];
-  } else {
-    const game = allGames[activeGame];
-    current = game[scene] || {
-      text: "Сцену не знайдено",
-      img: "",
-      options: [],
-    };
-  }
-
-  const handleChoice = (option) => {
-    if (
-      !activeGame &&
-      (option.next === "demo" || option.next === "avantyurist")
-    ) {
-      setActiveGame(option.next);
-      setScene("start");
-    } else {
-      setScene(option.next);
+const App = () => {
+  const [game, setGame] = useState(null);
+  const [musicUrl, setMusicUrl] = useState(null);
+  useEffect(() => {
+    if (game === null) {
+      setMusicUrl("/sounds/titleTheme.mp3");
     }
+  }, [game]);
+  const backgroundClass =
+    game === "👉Дар Міанта"
+      ? "bg-avantyurist"
+      : game === "👉demo"
+      ? "bg-demo"
+      : "bg-default";
 
-    if (option.inventory) {
-      setInventory((prev) => [...prev, ...option.inventory]);
-    }
+  const games = ["👉Дар Міанта", "👉demo"];
+
+  
+  const handleChoice = (game) => {
+    setGame(game);
+    console.log(game);
   };
-
   return (
-    <main className="container">
-      <AudioPlayer musicUrl={current.music} isUnlocked={true} />
-      <div className="main">
-        <div className="section description">{current.text}</div>
-        <div className="section img">
-          {current.img && <img src={current.img} alt="scene" />}
-        </div>
-        <div className="section selector">
+    <div className={`main ${backgroundClass}`}>
+       <AudioPlayer musicUrl={musicUrl} isUnlocked={true} />
+      <div className="container">
+        {!game && (
           <ul>
-            {current.options.map((opt, i) => (
+            {games.map((game, i) => (
               <li key={i}>
-                <button className="button" onClick={() => handleChoice(opt)}>
-                  {opt.text}
+                <button className="button" onClick={() => handleChoice(game)}>
+                  {game}
                 </button>
               </li>
             ))}
           </ul>
-        </div>
-        {activeGame && (
-          <div className="section state">
-            <p>🎒 Інвентар:</p>
-            <ul>
-              {inventory.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
         )}
+        {game === "👉Дар Міанта" && <Avantyurist setMusicUrl={setMusicUrl} />}
+        {game === "👉demo" && <Demo setMusicUrl={setMusicUrl} />}
       </div>
-    </main>
+    </div>
   );
-}
-
+;}
 export default App;
