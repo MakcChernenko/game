@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./app.css";
+import "./App.css";
 import main from "./data/main/main";
 import Avantyurist from "./components/avanturist/avantyurist";
 import Demo from "./components/demo/Demo";
