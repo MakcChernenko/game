@@ -24,12 +24,12 @@ img {
   transition: background-image 0.5s ease-in-out;
 }
 .bg-default {
-  background-image: url("/img/cosmios.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/img/cosmios.jpg");
   background-size: cover;
   background-position: center;
 }
 .bg-avantyurist {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("/img/fonForest.png");
   background-size: cover;
   background-position: center;
 }
@@ -48,12 +48,40 @@ img {
   justify-content: center;
 }
 
+.modalButton {
+  position: absolute;
+  bottom: 50px;
+  /* right: 10px; */
+  background: linear-gradient(145deg, #7f5af0, #00f0ff);
+  color: #662a2a;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-family: "Cinzel Decorative", serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  /* box-shadow: 0 0 12px #7f5af0, 0 0 24px #00f0ff; */
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ffffffcc;
+}
+
+.modalButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #1c2525, 0 0 40px #1d1141;
+}
+
+.modalButton:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 10px #1b363b;
+}
+
 .main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.h2{
+.h2 {
   font-size: 32px;
 }
 .h2:hover,

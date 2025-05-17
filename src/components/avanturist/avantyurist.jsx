@@ -17,24 +17,24 @@ const Avantyurist = ({ setMusicUrl }) => {
   };
 
   return (
-      <div className={css.container}>
-        <div className={`${css.section} ${css.description}`}>
-          {current.text}
-        </div>
-        <div className={`${css.section} ${css.img}`}>
-          <img src={current.img} alt="#" />
-        </div>
-        <div className={`${css.section} ${css.selector}`}>
-          <ul>
-            {current.options.map((opt, i) => (
-              <li key={i}>
-                <button className={css.button} onClick={() => handleChoice(opt)}>{opt.text}</button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={`${css.section} ${css.state}`}>Інвентар</div>
+    <div className={css.container}>
+      <div className={`${css.section} ${css.description}`}>{current.text}</div>
+      <div className={`${css.section} ${css.img}`}>
+        <img src={current.img} alt="#" />
       </div>
+      <div className={`${css.section} ${css.selector}`}>
+        <ul>
+          {current.options.map((opt, i) => (
+            <li key={i}>
+              <button className={css.button} onClick={() => handleChoice(opt)}>
+                {opt.text}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className={`${css.section} ${css.state}`}>Інвентар</div>
+    </div>
   );
 };
 
