@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: rgb(160, 188, 194);
+  font-size: 18px;
+  background-color: #0e0e1a;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cinzel Decorative", serif;
+  letter-spacing: 1px;
+}
+
+.h2 {
+  font-size: 32px;
+}
+.h2:hover,
+.h2:focus {
+  cursor: pointer;
+  box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+  color: rgb(12, 104, 12);
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .h2 {
+    font-size: 28px;
+  }
+}

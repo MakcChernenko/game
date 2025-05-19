@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import "./styles/common.css";
+import "./styles/App.css";
 import Avantyurist from "./components/avanturist/avantyurist";
 import Demo from "./components/demo/Demo";
 import AudioPlayer from "./components/AudioPlayer";
@@ -21,13 +22,13 @@ const App = () => {
   }, [game]);
 
   const backgroundClass =
-    game === "👉Дар Міанта"
+    game === "The gift of Miant"
       ? "bg-avantyurist"
-      : game === "👉demo"
+      : game === "demo"
       ? "bg-demo"
       : "bg-default";
 
-  const games = ["👉Дар Міанта", "👉demo"];
+  const games = ["The gift of Miant", "demo"];
 
   const handleChoice = (game) => {
     setGame(game);
@@ -39,18 +40,24 @@ const App = () => {
       {modal && <Modal setModal={setModal} modal={modal} />}
       <div className="container">
         {!game && (
-          <ul>
-            {games.map((game, i) => (
-              <li key={i}>
-                <h2 className="h2" onClick={() => handleChoice(game)}>
-                  {game}
-                </h2>
-              </li>
-            ))}
-          </ul>
+          <div className="game-menu">
+            <h1 className="logo">GloDog</h1>
+            <ul className="list">
+              {games.map((game, i) => (
+                <li key={i}>
+                  <h2 className="h2" onClick={() => handleChoice(game)}>
+                    {game}
+                  </h2>
+                </li>
+              ))}
+            </ul>
+            <p className="version">v0.1.0</p>
+          </div>
         )}
-        {game === "👉Дар Міанта" && <Avantyurist setMusicUrl={setMusicUrl} />}
-        {game === "👉demo" && <Demo setMusicUrl={setMusicUrl} />}
+        {game === "The gift of Miant" && (
+          <Avantyurist setMusicUrl={setMusicUrl} />
+        )}
+        {game === "demo" && <Demo setMusicUrl={setMusicUrl} />}
         {!game && (
           <button className="modalButton" onClick={handleClick}>
             Оновлення

@@ -10,6 +10,7 @@ const Modal = ({ setModal, modal }) => {
       <ul className={css.list}>
         <li>
           <p>18.05.25 - Додав цей список</p>
+          <p>19.05.25 - Зробив стартове меню за дизайном 'Konar_13'</p>
         </li>
       </ul>
       <button className={css.close} onClick={handleClick}>
