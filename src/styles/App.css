@@ -6,7 +6,7 @@
 }
 
 .bg-default {
-  background-image: url("/img/fonBoock.png");
+  background-image: url("img/fonBoockHard.png");
   background-size: cover;
   background-position: center;
 }
