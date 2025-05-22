@@ -60,7 +60,7 @@ const App = () => {
         {game === "demo" && <Demo setMusicUrl={setMusicUrl} />}
         {!game && (
           <button className="modalButton" onClick={handleClick}>
-            <img className="img" src="../public/img/rectangle 1.png" alt="" />
+            <img className="img" src="img/rectangle 1.png" alt="" />
           </button>
         )}
       </div>
