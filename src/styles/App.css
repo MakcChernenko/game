@@ -36,11 +36,12 @@
   /* width: 97px;
   height: 259px; */
   right: 10px;
-  background: linear-gradient(145deg, #7f5af0, #00f0ff);
-  color: #662a2a;
+  /* background: linear-gradient(145deg, #7f5af0, #00f0ff);
+  color: #662a2a; */
+  background-color: transparent;
   border: none;
-  border-radius: 12px;
-  padding: 12px 24px;
+  /* border-radius: 12px; */
+  /* padding: 12px 24px; */
   font-size: 1.2rem;
   font-family: "Cinzel Decorative", serif;
   letter-spacing: 1px;
